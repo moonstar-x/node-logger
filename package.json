@@ -1,0 +1,40 @@
+{
+  "name": "@greencoast/logger",
+  "version": "1.0.0",
+  "description": "A logger with some colors and timestamps depending on the logging level.",
+  "main": "src/index.js",
+  "engines": {
+		"node": ">=10"
+	},
+  "scripts": {
+    "test": "node ./manual_test/index.js",
+    "deploy": "npm publish --access public",
+    "lint": "./node_modules/.bin/eslint src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/greencoast-studios/js-color-logger.git"
+  },
+  "author": "Greencoast Studios",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/greencoast-studios/js-color-logger/issues"
+  },
+  "homepage": "https://github.com/greencoast-studios/js-color-logger#readme",
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-config-greencoast": "0.0.2"
+  },
+  "dependencies": {
+    "chalk": "^4.0.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "greencoast/node"
+    ],
+    "rules": {
+      "no-console": "off",
+      "strict": "never"
+    }
+  }
+}
