@@ -1,11 +1,21 @@
 {
   "name": "@greencoast/logger",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A logger with some colors and timestamps depending on the logging level.",
   "main": "src/index.js",
   "engines": {
 		"node": ">=10"
-	},
+  },
+  "keywords": [
+    "greencoast",
+    "greencoast-studios",
+    "log",
+    "logging",
+    "chalk",
+    "colors",
+    "colored logging",
+    "color logs"
+  ],
   "scripts": {
     "test": "node ./manual_test/index.js",
     "deploy": "npm publish --access public",

@@ -2,6 +2,12 @@
 
 This is a small logging module that helps with a more organized message logging through color, logging type and timestamps. Used in [Greencoast Studios](https://github.com/greencoast-studios) packages and projects.
 
+[![npm version](https://badgen.net/npm/v/@greencoast/logger)](https://www.npmjs.com/package/@greencoast/logger)
+[![npm downloads](https://badgen.net/npm/dt/@greencoast/logger)](https://www.npmjs.com/package/@greencoast/logger)
+[![bundle size](https://badgen.net/bundlephobia/minzip/@greencoast/logger)](https://bundlephobia.com/result?p=@greencoast/logger)
+[![github stars](https://badgen.net/github/stars/greencoast-studios/js-color-logger)](https://github.com/greencoast-studios/js-color-logger)
+[![github issues](https://badgen.net/github/issues/greencoast-studios/js-color-logger)](https://github.com/greencoast-studios/js-color-logger/issues)
+
 ## Usage
 
 ### Installation
