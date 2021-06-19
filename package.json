@@ -26,14 +26,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/greencoast-studios/js-color-logger.git"
+    "url": "git+https://github.com/greencoast-studios/node-logger.git"
   },
   "author": "Greencoast Studios",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/greencoast-studios/js-color-logger/issues"
+    "url": "https://github.com/greencoast-studios/node-logger/issues"
   },
-  "homepage": "https://github.com/greencoast-studios/js-color-logger#readme",
+  "homepage": "https://github.com/greencoast-studios/node-logger#readme",
   "devDependencies": {
     "@types/jest": "^26.0.23",
     "eslint": "^7.2.0",
