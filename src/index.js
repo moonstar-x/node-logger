@@ -15,30 +15,64 @@ const prepareMessage = (chalkStyle, prefix, args) => {
   return chalkStyle(`(${new Date().toLocaleTimeString()}) - ${chalk.bold(prefix)} - `, ...parseArguments(Array.prototype.slice.call(args)));
 };
 
-const log = (...arguments) => {
-  console.log(prepareMessage(chalk.white, '[LOG]', arguments));
+/**
+ * Log a LOG level message in white.
+ * @param  {...any} args
+ * @returns {undefined}
+ */
+const log = (...args) => {
+  console.log(prepareMessage(chalk.white, '[LOG]', args));
 };
 
-const info = (...arguments) => {
-  console.info(prepareMessage(chalk.cyan, '[INFO]', arguments));
+/**
+ * Log an INFO level message in cyan.
+ * @param  {...any} args
+ * @returns {undefined}
+ */
+const info = (...args) => {
+  console.info(prepareMessage(chalk.cyan, '[INFO]', args));
 };
 
-const error = (...arguments) => {
-  console.error(prepareMessage(chalk.red, '[ERROR]', arguments));
+/**
+ * Log an ERROR level message in red.
+ * @param  {...any} args
+ * @returns {undefined}
+ */
+const error = (...args) => {
+  console.error(prepareMessage(chalk.red, '[ERROR]', args));
 };
 
-const fatal = (...arguments) => {
-  console.error(prepareMessage(chalk.red, '[FATAL]', arguments));
+/**
+ * Log a FATAL level message in red.
+ * @param  {...any} args
+ * @returns {undefined}
+ */
+const fatal = (...args) => {
+  console.error(prepareMessage(chalk.red, '[FATAL]', args));
 };
 
-const warn = (...arguments) => {
-  console.warn(prepareMessage(chalk.yellow, '[WARN]', arguments));
+/**
+ * Log a WARN level message in yellow.
+ * @param  {...any} args
+ * @returns {undefined}
+ */
+const warn = (...args) => {
+  console.warn(prepareMessage(chalk.yellow, '[WARN]', args));
 };
 
-const debug = (...arguments) => {
-  console.debug(prepareMessage(chalk.green, '[DEBUG]', arguments));
+/**
+ * Log a DEBUG level message in green.
+ * @param  {...any} args
+ * @returns {undefined}
+ */
+const debug = (...args) => {
+  console.debug(prepareMessage(chalk.green, '[DEBUG]', args));
 };
 
+/**
+ * Clears the console.
+ * @returns {undefined}
+ */
 const clear = () => {
   console.clear();
 };

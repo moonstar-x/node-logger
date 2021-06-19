@@ -1,10 +1,11 @@
 {
   "name": "@greencoast/logger",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A logger with some colors and timestamps depending on the logging level.",
   "main": "src/index.js",
+  "types": "types/index.d.ts",
   "engines": {
-		"node": ">=10"
+    "node": ">=10"
   },
   "keywords": [
     "greencoast",
@@ -17,34 +18,29 @@
     "color logs"
   ],
   "scripts": {
-    "test": "node ./manual_test/index.js",
+    "test": "jest --watchAll",
+    "test:once": "jest --silent",
     "deploy": "npm publish --access public",
-    "lint": "./node_modules/.bin/eslint src"
+    "lint": "eslint src test",
+    "typings": "npx typescript"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/greencoast-studios/js-color-logger.git"
+    "url": "git+https://github.com/greencoast-studios/node-logger.git"
   },
   "author": "Greencoast Studios",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/greencoast-studios/js-color-logger/issues"
+    "url": "https://github.com/greencoast-studios/node-logger/issues"
   },
-  "homepage": "https://github.com/greencoast-studios/js-color-logger#readme",
+  "homepage": "https://github.com/greencoast-studios/node-logger#readme",
   "devDependencies": {
+    "@types/jest": "^26.0.23",
     "eslint": "^7.2.0",
-    "eslint-config-greencoast": "0.0.2"
+    "eslint-config-greencoast": "0.0.2",
+    "jest": "^27.0.4"
   },
   "dependencies": {
     "chalk": "^4.0.0"
-  },
-  "eslintConfig": {
-    "extends": [
-      "greencoast/node"
-    ],
-    "rules": {
-      "no-console": "off",
-      "strict": "never"
-    }
   }
 }
