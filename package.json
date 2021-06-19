@@ -19,7 +19,7 @@
   "scripts": {
     "test": "node ./manual_test/index.js",
     "deploy": "npm publish --access public",
-    "lint": "./node_modules/.bin/eslint src"
+    "lint": "eslint src"
   },
   "repository": {
     "type": "git",
@@ -37,14 +37,5 @@
   },
   "dependencies": {
     "chalk": "^4.0.0"
-  },
-  "eslintConfig": {
-    "extends": [
-      "greencoast/node"
-    ],
-    "rules": {
-      "no-console": "off",
-      "strict": "never"
-    }
   }
 }

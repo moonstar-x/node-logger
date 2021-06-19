@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "greencoast/node"
+  ],
+  "rules": {
+    "no-console": "off",
+    "strict": "never"
+  }
+}
