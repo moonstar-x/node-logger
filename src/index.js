@@ -17,56 +17,56 @@ const prepareMessage = (chalkStyle, prefix, args) => {
 
 /**
  * Log a LOG level message in white.
- * @param  {...any} arguments 
+ * @param  {...any} args 
  * @returns {undefined}   
  */
-const log = (...arguments) => {
-  console.log(prepareMessage(chalk.white, '[LOG]', arguments));
+const log = (...args) => {
+  console.log(prepareMessage(chalk.white, '[LOG]', args));
 };
 
 /**
  * Log an INFO level message in cyan.
- * @param  {...any} arguments 
+ * @param  {...any} args 
  * @returns {undefined}   
  */
-const info = (...arguments) => {
-  console.info(prepareMessage(chalk.cyan, '[INFO]', arguments));
+const info = (...args) => {
+  console.info(prepareMessage(chalk.cyan, '[INFO]', args));
 };
 
 /**
  * Log an ERROR level message in red.
- * @param  {...any} arguments 
+ * @param  {...any} args 
  * @returns {undefined}   
  */
-const error = (...arguments) => {
-  console.error(prepareMessage(chalk.red, '[ERROR]', arguments));
+const error = (...args) => {
+  console.error(prepareMessage(chalk.red, '[ERROR]', args));
 };
 
 /**
  * Log a FATAL level message in red.
- * @param  {...any} arguments 
+ * @param  {...any} args 
  * @returns {undefined}   
  */
-const fatal = (...arguments) => {
-  console.error(prepareMessage(chalk.red, '[FATAL]', arguments));
+const fatal = (...args) => {
+  console.error(prepareMessage(chalk.red, '[FATAL]', args));
 };
 
 /**
  * Log a WARN level message in yellow.
- * @param  {...any} arguments 
+ * @param  {...any} args 
  * @returns {undefined}   
  */
-const warn = (...arguments) => {
-  console.warn(prepareMessage(chalk.yellow, '[WARN]', arguments));
+const warn = (...args) => {
+  console.warn(prepareMessage(chalk.yellow, '[WARN]', args));
 };
 
 /**
  * Log a DEBUG level message in green.
- * @param  {...any} arguments 
+ * @param  {...any} args 
  * @returns {undefined}   
  */
-const debug = (...arguments) => {
-  console.debug(prepareMessage(chalk.green, '[DEBUG]', arguments));
+const debug = (...args) => {
+  console.debug(prepareMessage(chalk.green, '[DEBUG]', args));
 };
 
 /**
