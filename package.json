@@ -21,7 +21,7 @@
     "test": "jest --watchAll",
     "test:once": "jest --silent",
     "deploy": "npm publish --access public",
-    "lint": "eslint src",
+    "lint": "eslint src test",
     "typings": "npx typescript"
   },
   "repository": {

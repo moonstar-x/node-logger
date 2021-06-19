@@ -17,8 +17,8 @@ const prepareMessage = (chalkStyle, prefix, args) => {
 
 /**
  * Log a LOG level message in white.
- * @param  {...any} args 
- * @returns {undefined}   
+ * @param  {...any} args
+ * @returns {undefined}
  */
 const log = (...args) => {
   console.log(prepareMessage(chalk.white, '[LOG]', args));
@@ -26,8 +26,8 @@ const log = (...args) => {
 
 /**
  * Log an INFO level message in cyan.
- * @param  {...any} args 
- * @returns {undefined}   
+ * @param  {...any} args
+ * @returns {undefined}
  */
 const info = (...args) => {
   console.info(prepareMessage(chalk.cyan, '[INFO]', args));
@@ -35,8 +35,8 @@ const info = (...args) => {
 
 /**
  * Log an ERROR level message in red.
- * @param  {...any} args 
- * @returns {undefined}   
+ * @param  {...any} args
+ * @returns {undefined}
  */
 const error = (...args) => {
   console.error(prepareMessage(chalk.red, '[ERROR]', args));
@@ -44,8 +44,8 @@ const error = (...args) => {
 
 /**
  * Log a FATAL level message in red.
- * @param  {...any} args 
- * @returns {undefined}   
+ * @param  {...any} args
+ * @returns {undefined}
  */
 const fatal = (...args) => {
   console.error(prepareMessage(chalk.red, '[FATAL]', args));
@@ -53,8 +53,8 @@ const fatal = (...args) => {
 
 /**
  * Log a WARN level message in yellow.
- * @param  {...any} args 
- * @returns {undefined}   
+ * @param  {...any} args
+ * @returns {undefined}
  */
 const warn = (...args) => {
   console.warn(prepareMessage(chalk.yellow, '[WARN]', args));
@@ -62,8 +62,8 @@ const warn = (...args) => {
 
 /**
  * Log a DEBUG level message in green.
- * @param  {...any} args 
- * @returns {undefined}   
+ * @param  {...any} args
+ * @returns {undefined}
  */
 const debug = (...args) => {
   console.debug(prepareMessage(chalk.green, '[DEBUG]', args));

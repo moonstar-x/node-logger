@@ -3,7 +3,6 @@
     "greencoast/node"
   ],
   "rules": {
-    "no-console": "off",
-    "strict": "never"
+    "no-console": "off"
   }
 }

@@ -21,7 +21,7 @@ const ARGS = {
 describe('Logger', () => {
   beforeAll(() => {
     dateSpy.mockReturnValue(MOCKED_TIMESTAMP);
-    clearSpy.mockImplementation(() => undefined);
+    clearSpy.mockImplementation(() => null);
   });
 
   beforeEach(() => {
