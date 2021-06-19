@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "description": "A logger with some colors and timestamps depending on the logging level.",
   "main": "src/index.js",
+  "types": "types/index.d.ts",
   "engines": {
     "node": ">=10"
   },
@@ -19,7 +20,8 @@
   "scripts": {
     "test": "node ./manual_test/index.js",
     "deploy": "npm publish --access public",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "typings": "npx typescript"
   },
   "repository": {
     "type": "git",
