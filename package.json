@@ -4,7 +4,7 @@
   "description": "A logger with some colors and timestamps depending on the logging level.",
   "main": "src/index.js",
   "engines": {
-		"node": ">=10"
+    "node": ">=10"
   },
   "keywords": [
     "greencoast",

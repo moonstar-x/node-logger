@@ -1,4 +1,4 @@
-# js-color-logger
+# @greencoast/logger
 
 This is a small logging module that helps with a more organized message logging through color, logging type and timestamps. Used in [Greencoast Studios](https://github.com/greencoast-studios) packages and projects.
 
