@@ -18,7 +18,8 @@
     "color logs"
   ],
   "scripts": {
-    "test": "node ./manual_test/index.js",
+    "test": "jest --watchAll",
+    "test:once": "jest --silent",
     "deploy": "npm publish --access public",
     "lint": "eslint src",
     "typings": "npx typescript"
@@ -34,8 +35,10 @@
   },
   "homepage": "https://github.com/greencoast-studios/js-color-logger#readme",
   "devDependencies": {
+    "@types/jest": "^26.0.23",
     "eslint": "^7.2.0",
-    "eslint-config-greencoast": "0.0.2"
+    "eslint-config-greencoast": "0.0.2",
+    "jest": "^27.0.4"
   },
   "dependencies": {
     "chalk": "^4.0.0"
