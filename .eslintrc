@@ -2,6 +2,9 @@
   "extends": [
     "greencoast/node"
   ],
+  "ignorePatterns": [
+    "**/*.d.ts"
+  ],
   "rules": {
     "no-console": "off"
   }
