@@ -1,12 +1,13 @@
+[![ci-build-status](https://img.shields.io/github/actions/workflow/status/greencoast-studios/node-logger/ci.yml?logo=github&label=build)](https://github.com/greencoast-studios/node-logger)
+[![issues](https://img.shields.io/github/issues/greencoast-studios/node-logger?logo=github)](https://github.com/greencoast-studios/node-logger)
+[![bundle-size](https://img.shields.io/bundlephobia/min/@greencoast/logger)](https://www.npmjs.com/package/@greencoast/logger)
+[![version](https://img.shields.io/npm/v/@greencoast/logger?logo=npm)](https://www.npmjs.com/package/@greencoast/logger)
+[![downloads-week](https://img.shields.io/npm/dw/@greencoast/logger?logo=npm)](https://www.npmjs.com/package/@greencoast/logger)
+[![downloads-total](https://img.shields.io/npm/dt/@greencoast/logger?logo=npm)](https://www.npmjs.com/package/@greencoast/logger)
+
 # @greencoast/logger
 
 This is a small logging module that helps with a more organized message logging through color, logging type and timestamps. Used in [Greencoast Studios](https://github.com/greencoast-studios) packages and projects.
-
-[![npm version](https://badgen.net/npm/v/@greencoast/logger)](https://www.npmjs.com/package/@greencoast/logger)
-[![npm downloads](https://badgen.net/npm/dt/@greencoast/logger)](https://www.npmjs.com/package/@greencoast/logger)
-[![bundle size](https://badgen.net/bundlephobia/minzip/@greencoast/logger)](https://bundlephobia.com/result?p=@greencoast/logger)
-[![github stars](https://badgen.net/github/stars/greencoast-studios/node-logger)](https://github.com/greencoast-studios/node-logger)
-[![github issues](https://badgen.net/github/issues/greencoast-studios/node-logger)](https://github.com/greencoast-studios/node-logger/issues)
 
 ## Usage
 
