@@ -12,7 +12,7 @@ const parseArguments = (args) => {
 };
 
 const prepareMessage = (chalkStyle, prefix, args) => {
-  return chalkStyle(`(${new Date().toLocaleTimeString()}) - ${chalk.bold(prefix)} - `, ...parseArguments(Array.prototype.slice.call(args)));
+  return chalkStyle(`(${new Date().toLocaleTimeString()}) - ${chalk.bold(prefix)} -`, ...parseArguments(Array.prototype.slice.call(args)));
 };
 
 /**
