@@ -1,6 +1,6 @@
 {
   "name": "@greencoast/logger",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A logger with some colors and timestamps depending on the logging level.",
   "main": "src/index.js",
   "types": "types/index.d.ts",
