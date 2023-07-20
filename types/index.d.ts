@@ -1,39 +1,39 @@
 /**
  * Log a LOG level message in white.
- * @param  {...any} arguments
+ * @param  {...any} args
  * @returns {undefined}
  */
-export function log(...arguments: any[]): undefined;
+export function log(...args: any[]): undefined;
 /**
  * Log an INFO level message in cyan.
- * @param  {...any} arguments
+ * @param  {...any} args
  * @returns {undefined}
  */
-export function info(...arguments: any[]): undefined;
+export function info(...args: any[]): undefined;
 /**
  * Log an ERROR level message in red.
- * @param  {...any} arguments
+ * @param  {...any} args
  * @returns {undefined}
  */
-export function error(...arguments: any[]): undefined;
+export function error(...args: any[]): undefined;
 /**
  * Log a FATAL level message in red.
- * @param  {...any} arguments
+ * @param  {...any} args
  * @returns {undefined}
  */
-export function fatal(...arguments: any[]): undefined;
+export function fatal(...args: any[]): undefined;
 /**
  * Log a WARN level message in yellow.
- * @param  {...any} arguments
+ * @param  {...any} args
  * @returns {undefined}
  */
-export function warn(...arguments: any[]): undefined;
+export function warn(...args: any[]): undefined;
 /**
  * Log a DEBUG level message in green.
- * @param  {...any} arguments
+ * @param  {...any} args
  * @returns {undefined}
  */
-export function debug(...arguments: any[]): undefined;
+export function debug(...args: any[]): undefined;
 /**
  * Clears the console.
  * @returns {undefined}

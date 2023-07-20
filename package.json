@@ -21,7 +21,7 @@
     "test": "jest --silent",
     "test:watch": "jest --watchAll",
     "lint": "eslint src test",
-    "typings": "typescript"
+    "typings": "tsc"
   },
   "repository": {
     "type": "git",
