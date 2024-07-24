@@ -1,15 +1,17 @@
 {
-  "name": "@greencoast/logger",
-  "version": "1.1.1",
+  "name": "@moonstar-x/logger",
+  "version": "1.0.0",
   "description": "A logger with some colors and timestamps depending on the logging level.",
-  "main": "src/index.js",
-  "types": "types/index.d.ts",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "files": [
+    "build/**/*"
+  ],
   "engines": {
-    "node": ">=10"
+    "node": ">=12"
   },
   "keywords": [
-    "greencoast",
-    "greencoast-studios",
+    "moonstar-x",
     "log",
     "logging",
     "chalk",
@@ -18,29 +20,34 @@
     "color logs"
   ],
   "scripts": {
-    "test": "jest --silent",
+    "test": "jest",
     "test:watch": "jest --watchAll",
-    "lint": "eslint src test",
-    "typings": "tsc"
+    "type-check": "tsc --noEmit",
+    "lint": "eslint . --ext .tsx,.ts,.js",
+    "lint:fix": "eslint . --ext .tsx,.ts,.js --fix",
+    "build": "tsc --build"
   },
+  "author": "moonstar-x",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/greencoast-studios/node-logger.git"
+    "url": "git+https://github.com/moonstar-x/node-logger.git"
   },
-  "author": "Greencoast Studios",
-  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/greencoast-studios/node-logger/issues"
+    "url": "https://github.com/moonstar-x/node-logger/issues"
   },
-  "homepage": "https://github.com/greencoast-studios/node-logger#readme",
+  "homepage": "https://github.com/moonstar-x/node-logger#readme",
   "dependencies": {
     "chalk": "^4.1.2"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.3",
-    "eslint": "^8.45.0",
-    "eslint-config-greencoast": "^0.0.3",
-    "jest": "^29.6.1",
-    "typescript": "^5.1.6"
+    "@moonstar-x/eslint-config": "^1.0.0",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.14.12",
+    "eslint": "^8.57.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
   }
 }

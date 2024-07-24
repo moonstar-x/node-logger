@@ -1,0 +1,19 @@
+name: On Push (Main)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: Run Tests
+    uses: ./.github/workflows/callable-test.yml
+
+  publish:
+    name: Publish Package to Registry
+    uses: ./.github/workflows/callable-publish.yml
+    needs:
+      - test
+    secrets:
+      token: ${{ secrets.NPM_TOKEN }}

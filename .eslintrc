@@ -1,11 +1,11 @@
 {
   "extends": [
-    "greencoast/node"
-  ],
-  "ignorePatterns": [
-    "**/*.d.ts"
+    "@moonstar-x/eslint-config/rules/node",
+    "@moonstar-x/eslint-config/rules/typescript"
   ],
   "rules": {
-    "no-console": "off"
+    "no-console": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/ban-ts-comment": "off"
   }
 }

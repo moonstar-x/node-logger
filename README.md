@@ -1,13 +1,13 @@
-[![ci-build-status](https://img.shields.io/github/actions/workflow/status/greencoast-studios/node-logger/ci.yml?logo=github&label=build)](https://github.com/greencoast-studios/node-logger)
-[![issues](https://img.shields.io/github/issues/greencoast-studios/node-logger?logo=github)](https://github.com/greencoast-studios/node-logger)
-[![bundle-size](https://img.shields.io/bundlephobia/min/@greencoast/logger)](https://www.npmjs.com/package/@greencoast/logger)
-[![version](https://img.shields.io/npm/v/@greencoast/logger?logo=npm)](https://www.npmjs.com/package/@greencoast/logger)
-[![downloads-week](https://img.shields.io/npm/dw/@greencoast/logger?logo=npm)](https://www.npmjs.com/package/@greencoast/logger)
-[![downloads-total](https://img.shields.io/npm/dt/@greencoast/logger?logo=npm)](https://www.npmjs.com/package/@greencoast/logger)
+[![ci-build-status](https://img.shields.io/github/actions/workflow/status/moonstar-x/node-logger/ci.yml?logo=github&label=build)](https://github.com/moonstar-x/node-logger)
+[![issues](https://img.shields.io/github/issues/moonstar-x/node-logger?logo=github)](https://github.com/moonstar-x/node-logger)
+[![bundle-size](https://img.shields.io/bundlephobia/min/@moonstar-x/logger)](https://www.npmjs.com/package/@moonstar-x/logger)
+[![version](https://img.shields.io/npm/v/@moonstar-x/logger?logo=npm)](https://www.npmjs.com/package/@moonstar-x/logger)
+[![downloads-week](https://img.shields.io/npm/dw/@moonstar-x/logger?logo=npm)](https://www.npmjs.com/package/@moonstar-x/logger)
+[![downloads-total](https://img.shields.io/npm/dt/@moonstar-x/logger?logo=npm)](https://www.npmjs.com/package/@moonstar-x/logger)
 
-# @greencoast/logger
+# @moonstar-x/logger
 
-This is a small logging module that helps with a more organized message logging through color, logging type and timestamps. Used in [Greencoast Studios](https://github.com/greencoast-studios) packages and projects.
+This is a small logging module that helps with a more organized message logging through color, logging type and timestamps.
 
 ## Usage
 
@@ -16,20 +16,20 @@ This is a small logging module that helps with a more organized message logging 
 With `npm`:
 
 ``` text
-npm install @greencoast/logger
+npm install @moonstar-x/logger
 ```
 
 or with `yarn`:
 
 ``` text
-yarn add @greencoast/logger
+yarn add @moonstar-x/logger
 ```
 
 ### Importing the Package
 
 ``` js
-const logger = require('@greencoast/logger');
-import logger from '@greencoast/logger';
+const logger = require('@moonstar-x/logger');
+import logger from '@moonstar-x/logger';
 ```
 
 ### Logging Messages
@@ -79,7 +79,3 @@ You can clear the console with:
 ``` js
 logger.clear();
 ```
-
-## Author
-
-This module was made by [Greencoast Studios](https://github.com/greencoast-studios).
