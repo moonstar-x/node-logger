@@ -32,5 +32,5 @@ jobs:
       - name: Publish to Registry
         uses: JS-DevTools/npm-publish@v3
         with:
-          registry: ${{ inputs.registry }}
+          token: ${{ secrets.token }}
           access: public
