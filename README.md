@@ -1,4 +1,4 @@
-[![ci-build-status](https://img.shields.io/github/actions/workflow/status/moonstar-x/node-logger/ci.yml?logo=github&label=build)](https://github.com/moonstar-x/node-logger)
+[![ci-build-status](https://img.shields.io/github/actions/workflow/status/moonstar-x/node-logger/on-push.yml?logo=github&label=build)](https://github.com/moonstar-x/node-logger)
 [![issues](https://img.shields.io/github/issues/moonstar-x/node-logger?logo=github)](https://github.com/moonstar-x/node-logger)
 [![bundle-size](https://img.shields.io/bundlephobia/min/@moonstar-x/logger)](https://www.npmjs.com/package/@moonstar-x/logger)
 [![version](https://img.shields.io/npm/v/@moonstar-x/logger?logo=npm)](https://www.npmjs.com/package/@moonstar-x/logger)
