@@ -1,4 +1,4 @@
-import * as logger from '.';
+import logger from '.';
 import util from 'util';
 
 const MOCKED_TIMESTAMP = '11:49:58 PM';

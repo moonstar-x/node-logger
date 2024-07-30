@@ -69,3 +69,13 @@ export const debug = (...args: any[]): void => {
 export const clear = (): void => {
   console.clear();
 };
+
+export default {
+  log,
+  info,
+  error,
+  fatal,
+  warn,
+  debug,
+  clear
+};
