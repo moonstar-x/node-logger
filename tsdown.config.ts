@@ -9,7 +9,8 @@ const config: UserConfig = defineConfig({
   fixedExtension: false,
   dts: true,
   sourcemap: true,
-  clean: true
+  clean: true,
+  outputOptions: { exports: 'named' }
 });
 
 export default config;

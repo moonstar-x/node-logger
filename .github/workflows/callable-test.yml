@@ -43,7 +43,7 @@ jobs:
         run: npm run test:coverage
 
       - name: Report Coverage
-        if: ${{ inputs.run-coverage }}
+        if: ${{ inputs.with_coverage }}
         uses: romeovs/lcov-reporter-action@v0.4.0
         with:
           lcov-file: coverage/lcov.info
