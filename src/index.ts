@@ -1,81 +1,14 @@
-import chalk, { Chalk } from 'chalk';
-import util from 'util';
+import type { Logger } from './logger.js';
+import { createLogger } from './logger.js';
 
-const parseArguments = (args: unknown[]): string[] => {
-  return args.map((item) => {
-    if (typeof item === 'string') {
-      return item;
-    }
-
-    return util.inspect(item, { colors: false, depth: null });
-  });
-};
-
-const prepareMessage = (chalkStyle: Chalk, prefix: string, args: unknown[]): string => {
-  return chalkStyle(`(${new Date().toLocaleTimeString()}) - ${chalk.bold(prefix)} -`, ...parseArguments(Array.prototype.slice.call(args)));
-};
+export { createStyler, isColorSupported, type Destination, type StyleName, type Styler } from './colors.js';
+export { formatJson, formatPretty, formatTimestamp, serializeArgs, type LogEntry, type TimestampFormat } from './format.js';
+export { isLogLevel, LEVEL_SEVERITY, LOG_LEVELS, LOG_METHODS, shouldLog, type LoggableLevel, type LogLevel, type LogMethod, type MethodSpec } from './levels.js';
+export { createLogger, Logger, optionsFromEnvironment, type LogFormat, type LoggerOptions } from './logger.js';
 
 /**
- * Log a LOG level message in white.
- * @param {...any} args
+ * The default logger, configured from the environment. Import it as the default export, or use the bound methods
+ * exported alongside it.
  */
-export const log = (...args: any[]): void => {
-  console.log(prepareMessage(chalk.white, '[LOG]', args));
-};
-
-/**
- * Log an INFO level message in cyan.
- * @param {...any} args
- */
-export const info = (...args: any[]): void => {
-  console.info(prepareMessage(chalk.cyan, '[INFO]', args));
-};
-
-/**
- * Log an ERROR level message in red.
- * @param {...any} args
- */
-export const error = (...args: any[]): void => {
-  console.error(prepareMessage(chalk.red, '[ERROR]', args));
-};
-
-/**
- * Log a FATAL level message in red.
- * @param {...any} args
- */
-export const fatal = (...args: any[]): void => {
-  console.error(prepareMessage(chalk.red, '[FATAL]', args));
-};
-
-/**
- * Log a WARN level message in yellow.
- * @param {...any} args
- */
-export const warn = (...args: any[]): void => {
-  console.warn(prepareMessage(chalk.yellow, '[WARN]', args));
-};
-
-/**
- * Log a DEBUG level message in green.
- * @param {...any} args
- */
-export const debug = (...args: any[]): void => {
-  console.debug(prepareMessage(chalk.green, '[DEBUG]', args));
-};
-
-/**
- * Clears the console.
- */
-export const clear = (): void => {
-  console.clear();
-};
-
-export default {
-  log,
-  info,
-  error,
-  fatal,
-  warn,
-  debug,
-  clear
-};
+export const logger: Logger = createLogger();
+export default logger;

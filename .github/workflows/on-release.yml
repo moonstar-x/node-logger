@@ -1,0 +1,26 @@
+name: On Release
+
+on:
+  release:
+    types:
+      - released
+
+run-name: Release ${{ github.event.release.tag_name }} by @${{ github.actor }}
+
+jobs:
+  test:
+    name: Run Tests
+    uses: ./.github/workflows/callable-test.yml
+    with:
+      with_coverage: false
+    secrets:
+      machine_account_token: ${{ secrets.MACHINE_ACCOUNT_TOKEN }}
+
+  publish:
+    name: Publish Package
+    uses: ./.github/workflows/callable-publish.yml
+    needs:
+      - test
+    permissions:
+      id-token: write
+      contents: read

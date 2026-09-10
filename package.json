@@ -1,53 +1,86 @@
 {
   "name": "@moonstar-x/logger",
-  "version": "1.0.1",
-  "description": "A logger with some colors and timestamps depending on the logging level.",
-  "main": "build/index.js",
-  "types": "build/index.d.ts",
-  "files": [
-    "build/**/*"
-  ],
-  "engines": {
-    "node": ">=12"
+  "version": "2.0.0",
+  "description": "A tiny, zero-dependency logger for Node.js with levels, colors, timestamps, child loggers and JSON output.",
+  "scripts": {
+    "build": "tsdown",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:package": "publint",
+    "test": "cross-env NODE_OPTIONS='--experimental-vm-modules --no-warnings' jest",
+    "test:watch": "npm test -- --watch",
+    "test:coverage": "npm test -- --coverage",
+    "prepack": "npm run build"
   },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "keywords": [
-    "moonstar-x",
     "log",
+    "logger",
     "logging",
-    "chalk",
     "colors",
     "colored logging",
-    "color logs"
+    "color logs",
+    "ansi",
+    "console",
+    "json logging",
+    "structured logging",
+    "log level",
+    "child logger",
+    "zero dependencies",
+    "typescript"
   ],
-  "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watchAll",
-    "type-check": "tsc --noEmit",
-    "lint": "eslint . --ext .tsx,.ts,.js",
-    "lint:fix": "eslint . --ext .tsx,.ts,.js --fix",
-    "build": "tsc --build"
-  },
-  "author": "moonstar-x",
   "license": "MIT",
+  "author": "moonstar-x <christian.lopez99@outlook.com>",
+  "homepage": "https://github.com/moonstar-x-libs/node-logger#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/moonstar-x/node-logger.git"
+    "url": "git+https://github.com/moonstar-x-libs/node-logger.git"
   },
   "bugs": {
-    "url": "https://github.com/moonstar-x/node-logger/issues"
-  },
-  "homepage": "https://github.com/moonstar-x/node-logger#readme",
-  "dependencies": {
-    "chalk": "^4.1.2"
+    "url": "https://github.com/moonstar-x-libs/node-logger/issues"
   },
   "devDependencies": {
-    "@moonstar-x/eslint-config": "^1.0.0",
-    "@types/jest": "^29.5.12",
-    "@types/node": "^20.14.12",
-    "eslint": "^8.57.0",
-    "jest": "^29.7.0",
-    "ts-jest": "^29.2.3",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.5.4"
+    "@jest/globals": "^30.5.1",
+    "@moonstar-x/eslint-config": "^2.0.0",
+    "@moonstar-x/tsconfig": "^1.0.1",
+    "@types/node": "^22.20.2",
+    "@typescript-eslint/parser": "^8.70.0",
+    "cross-env": "^10.1.0",
+    "eslint": "^10.10.0",
+    "jest": "^30.5.1",
+    "publint": "^0.3.24",
+    "ts-jest": "^29.4.12",
+    "tsdown": "^0.23.0",
+    "typescript": "^6.0.3"
+  },
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "allowScripts": {
+    "unrs-resolver@1.12.2": true,
+    "@parcel/watcher@2.6.0": true
   }
 }

@@ -1,47 +1,12 @@
 {
-  "include": ["src/"],
-  "exclude": [
-    "build",
-    "node_modules",
-    "src/**/*.spec.*"
+  "extends": "@moonstar-x/tsconfig/node",
+  "include": [
+    "src/**/*.ts",
+    "jest.config.ts",
+    "tsdown.config.ts"
   ],
-
-  "compileOnSave": true,
-
-  "compilerOptions": {
-    "rootDir": "src",
-
-    "target": "es5",
-    "module": "commonjs",
-
-    "allowJs": false,
-    "declaration": true,
-    "declarationMap": true,
-    "outDir": "build",
-    "resolveJsonModule": true,
-
-    "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictBindCallApply": true,
-    "strictPropertyInitialization": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
-    "useUnknownInCatchVariables": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitOverride": true,
-
-    "sourceMap": true,
-    "emitDeclarationOnly": false,
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
-  }
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }

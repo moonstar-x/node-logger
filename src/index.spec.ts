@@ -1,180 +1,49 @@
-import logger from '.';
-import util from 'util';
+import process from 'node:process';
+import { afterEach, describe, expect, it, jest } from '@jest/globals';
+import defaultLogger, { LOG_LEVELS, logger, Logger } from './index.js';
 
-const MOCKED_TIMESTAMP = '11:49:58 PM';
-const ARGS = {
-  str: 'hello',
-  arr: ['this', 'is', 'an array'],
-  obj: { prop: 'prop' },
-  err: new Error('oops')
-};
+const ANSI = new RegExp(String.raw`${String.fromCodePoint(27)}\[\d+m`, 'gu');
 
-describe('Logger', () => {
-  const messageToLog = [ARGS.str, ARGS.arr, ARGS.obj, ARGS.err];
-  const arrString = util.inspect(ARGS.arr, { depth: null, colors: false });
-  const objString = util.inspect(ARGS.obj, { depth: null, colors: false });
-  const expectedMessage = `${ARGS.str} ${arrString} ${objString} ${ARGS.err.toString()}`;
+const stripAnsi = (value: string): string => value.replaceAll(ANSI, '');
 
-  beforeAll(() => {
-    // @ts-ignore
-    jest.spyOn(Date.prototype, 'toLocaleTimeString').mockReturnValue(MOCKED_TIMESTAMP);
+afterEach(() => {
+  jest.restoreAllMocks();
+});
 
-    // @ts-ignore
-    jest.spyOn(console, 'log').mockReturnValue();
-    // @ts-ignore
-    jest.spyOn(console, 'info').mockReturnValue();
-    // @ts-ignore
-    jest.spyOn(console, 'error').mockReturnValue();
-    // @ts-ignore
-    jest.spyOn(console, 'warn').mockReturnValue();
-    // @ts-ignore
-    jest.spyOn(console, 'debug').mockReturnValue();
-    // @ts-ignore
-    jest.spyOn(console, 'clear').mockReturnValue();
+describe('the default export', () => {
+  it('should be a logger.', () => {
+    expect(defaultLogger).toBeInstanceOf(Logger);
   });
 
-  beforeEach(() => {
-    jest.clearAllMocks();
+  it('should also be available as a named export.', () => {
+    expect(logger).toBe(defaultLogger);
   });
 
-  afterAll(() => {
-    jest.restoreAllMocks();
+  it('should be configured with a valid level.', () => {
+    expect(LOG_LEVELS).toContain(defaultLogger.level);
+  });
+});
+
+describe('the named methods', () => {
+  it('should write to stdout.', () => {
+    const write = jest.spyOn(process.stdout, 'write').mockReturnValue(true);
+
+    logger.info('hello');
+
+    expect(write).toHaveBeenCalledTimes(1);
+    expect(stripAnsi(String(write.mock.calls[0]?.[0]))).toContain('[INFO] - hello');
   });
 
-  describe('log()', () => {
-    it('should be defined.', () => {
-      expect(logger.log).toBeDefined();
-    });
+  it('should write warnings and errors to stderr.', () => {
+    const write = jest.spyOn(process.stderr, 'write').mockReturnValue(true);
 
-    it('should call console.log.', () => {
-      logger.log();
-      expect(console.log).toHaveBeenCalledTimes(1);
-    });
+    logger.warn('careful');
+    logger.error('broken');
+    logger.fatal('very broken');
 
-    it('should log arguments.', () => {
-      logger.log(...messageToLog);
-
-      const actualLogged = (console.log as jest.Mock).mock.calls[0][0];
-
-      expect(actualLogged).toContain(MOCKED_TIMESTAMP);
-      expect(actualLogged).toContain('[LOG]');
-      expect(actualLogged).toContain(expectedMessage);
-    });
-  });
-
-  describe('info()', () => {
-    it('should be defined.', () => {
-      expect(logger.info).toBeDefined();
-    });
-
-    it('should call console.info.', () => {
-      logger.info();
-      expect(console.info).toHaveBeenCalledTimes(1);
-    });
-
-    it('should log arguments.', () => {
-      logger.info(...messageToLog);
-
-      const actualLogged = (console.info as jest.Mock).mock.calls[0][0];
-
-      expect(actualLogged).toContain(MOCKED_TIMESTAMP);
-      expect(actualLogged).toContain('[INFO]');
-      expect(actualLogged).toContain(expectedMessage);
-    });
-  });
-
-  describe('error()', () => {
-    it('should be defined.', () => {
-      expect(logger.error).toBeDefined();
-    });
-
-    it('should call console.error.', () => {
-      logger.error();
-      expect(console.error).toHaveBeenCalledTimes(1);
-    });
-
-    it('should log arguments.', () => {
-      logger.error(...messageToLog);
-
-      const actualLogged = (console.error as jest.Mock).mock.calls[0][0];
-
-      expect(actualLogged).toContain(MOCKED_TIMESTAMP);
-      expect(actualLogged).toContain('[ERROR]');
-      expect(actualLogged).toContain(expectedMessage);
-    });
-  });
-
-  describe('fatal()', () => {
-    it('should be defined.', () => {
-      expect(logger.fatal).toBeDefined();
-    });
-
-    it('should call console.error.', () => {
-      logger.fatal();
-      expect(console.error).toHaveBeenCalledTimes(1);
-    });
-
-    it('should log arguments.', () => {
-      logger.fatal(...messageToLog);
-
-      const actualLogged = (console.error as jest.Mock).mock.calls[0][0];
-
-      expect(actualLogged).toContain(MOCKED_TIMESTAMP);
-      expect(actualLogged).toContain('[FATAL]');
-      expect(actualLogged).toContain(expectedMessage);
-    });
-  });
-
-  describe('warn()', () => {
-    it('should be defined.', () => {
-      expect(logger.warn).toBeDefined();
-    });
-
-    it('should call console.warn.', () => {
-      logger.warn();
-      expect(console.warn).toHaveBeenCalledTimes(1);
-    });
-
-    it('should log arguments.', () => {
-      logger.warn(...messageToLog);
-
-      const actualLogged = (console.warn as jest.Mock).mock.calls[0][0];
-
-      expect(actualLogged).toContain(MOCKED_TIMESTAMP);
-      expect(actualLogged).toContain('[WARN]');
-      expect(actualLogged).toContain(expectedMessage);
-    });
-  });
-
-  describe('debug()', () => {
-    it('should be defined.', () => {
-      expect(logger.debug).toBeDefined();
-    });
-
-    it('should call console.debug.', () => {
-      logger.debug();
-      expect(console.debug).toHaveBeenCalledTimes(1);
-    });
-
-    it('should log arguments.', () => {
-      logger.debug(...messageToLog);
-
-      const actualLogged = (console.debug as jest.Mock).mock.calls[0][0];
-
-      expect(actualLogged).toContain(MOCKED_TIMESTAMP);
-      expect(actualLogged).toContain('[DEBUG]');
-      expect(actualLogged).toContain(expectedMessage);
-    });
-  });
-
-  describe('clear()', () => {
-    it('should be defined.', () => {
-      expect(logger.clear).toBeDefined();
-    });
-
-    it('should call console.clear', () => {
-      logger.clear();
-      expect(console.clear).toHaveBeenCalledTimes(1);
-    });
+    expect(write).toHaveBeenCalledTimes(3);
+    expect(stripAnsi(String(write.mock.calls[0]?.[0]))).toContain('[WARN] - careful');
+    expect(stripAnsi(String(write.mock.calls[1]?.[0]))).toContain('[ERROR] - broken');
+    expect(stripAnsi(String(write.mock.calls[2]?.[0]))).toContain('[FATAL] - very broken');
   });
 });
