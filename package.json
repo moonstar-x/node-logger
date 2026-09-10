@@ -3,15 +3,13 @@
   "version": "2.0.0",
   "description": "A tiny, zero-dependency logger for Node.js with levels, colors, timestamps, child loggers and JSON output.",
   "scripts": {
-    "build": "tsc",
-    "clean": "tsc --clean",
+    "build": "tsdown",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test": "cross-env NODE_OPTIONS='--experimental-vm-modules --no-warnings' jest",
     "test:watch": "npm test -- --watch",
     "test:coverage": "npm test -- --coverage",
-    "prebuild": "npm run clean",
     "prepack": "npm run build"
   },
   "type": "module",
@@ -72,6 +70,7 @@
     "eslint": "^10.10.0",
     "jest": "^30.5.1",
     "ts-jest": "^29.4.12",
+    "tsdown": "^0.23.0",
     "typescript": "^6.0.3"
   },
   "sideEffects": false,
@@ -79,6 +78,7 @@
     "node": ">=22.12.0"
   },
   "allowScripts": {
-    "unrs-resolver@1.12.2": true
+    "unrs-resolver@1.12.2": true,
+    "@parcel/watcher@2.6.0": true
   }
 }
