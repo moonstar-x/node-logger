@@ -27,7 +27,7 @@ export interface LogEntry {
   /** The already serialized message. */
   message: string;
   /** The name of the logger that emitted the message, if any. */
-  name?: string;
+  name?: string | undefined;
   /** When the message was emitted. */
   time: Date;
 }
