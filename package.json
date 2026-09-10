@@ -8,6 +8,9 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "test": "cross-env NODE_OPTIONS='--experimental-vm-modules --no-warnings' jest",
+    "test:watch": "npm test -- --watch",
+    "test:coverage": "npm test -- --coverage",
     "prebuild": "npm run clean",
     "prepack": "npm run build"
   },
@@ -60,11 +63,16 @@
     "url": "https://github.com/moonstar-x-libs/node-logger/issues"
   },
   "devDependencies": {
+    "@jest/globals": "^30.5.1",
     "@moonstar-x/eslint-config": "^2.0.0",
     "@moonstar-x/tsconfig": "^1.0.1",
     "@types/node": "^22.20.2",
+    "@typescript-eslint/parser": "^8.70.0",
+    "cross-env": "^10.1.0",
     "eslint": "^10.10.0",
-    "typescript": "^7.0.2"
+    "jest": "^30.5.1",
+    "ts-jest": "^29.4.12",
+    "typescript": "^6.0.3"
   },
   "sideEffects": false,
   "engines": {

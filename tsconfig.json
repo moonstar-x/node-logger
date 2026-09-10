@@ -2,6 +2,7 @@
   "extends": "@moonstar-x/tsconfig/node",
   "include": [
     "src/**/*.ts",
+    "jest.config.ts"
   ],
   "exclude": [
     "node_modules",
